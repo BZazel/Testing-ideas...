@@ -1,0 +1,40 @@
+*{box-sizing: border-box;}
+body
+{
+    margin:0px;
+    padding: 0px;
+    overflow: hidden;
+}
+#main-container
+{
+    height:100vh;
+    max-height: 100vh;
+    display: grid;
+    grid-template-columns: 80vw  auto;
+    
+}
+.ranges-container
+{
+    padding:10px;
+    width:100%;
+    background: lightblue;
+    
+}
+#toolbar
+{
+    border: 1px solid #000;
+}
+#toolbar *{
+    margin:2px;
+    display: block;
+
+}
+
+input[type="radio"]+ label
+{ 
+    width: 30px;
+} 
+#canvas-container
+{
+    border: 1px solid #000;
+}

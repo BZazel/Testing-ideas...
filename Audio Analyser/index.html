@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <script src="app.js"></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="main-container">
+            <div id="canvas-container">
+              
+                <canvas id="canvas"></canvas>  
+            </div>
+            <div id="toolbar">
+
+                <label id="input-file-label" for="file">Wybierz plik audio</label>
+                <input id="input-file" type="file" name="file" >
+
+              
+                <div id="types">
+                        <label for="circle-bars">Bars</label>
+                        <input class="radio-item" type="radio" name="animation-type" value="circle-bars" checked>
+
+                        <label for="circle-waves">Waves</label>
+                        <input class="radio-item" type="radio" name="animation-type" value="circle-waves">
+
+                        <label for="rectangle">Rectangle</label>
+                        <input class="radio-item" type="radio" name="animation-type" value="rectangle">
+
+                       
+                    </div>
+                    <span> Aktualny czas: </span>
+                    <span id="current-time">0</span>
+                    <button id="play-pause-btn" value="Stop/Start">Start/Stop</button>
+                    <p>Animację można skalować myszką</p>
+            </div>
+           
+        </div>
+    </body>
+</html>
+
