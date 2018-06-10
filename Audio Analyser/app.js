@@ -24,7 +24,7 @@ var main = function()
 
 
     //SETUP ...
-    (function(context){
+    (function(){
         
         //Canvas setup ==============
         canvas = document.querySelector('#canvas');
