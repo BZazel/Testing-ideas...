@@ -3,6 +3,6 @@
 #### lub uruchomić komendą w terminalu linuxa
 
 ```
-./ FizzBuzz
+./FizzBuzz
 
 ```
