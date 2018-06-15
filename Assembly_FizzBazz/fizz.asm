@@ -1,26 +1,14 @@
-; *********** DEFINE MACROS ***************
-%macro printINT 1
-	mov rax, 1
-	mov rdi, 1
-	mov rsi, 48
-	add rsi, [%1] 		;ACSII e.g. 48 +3 = 51 (char 3 in ASCII)
-	mov rdx, 1		;length
-	syscall
-%endmacro
-
-;********************************************
-
 
 section .data
 	fizz	 db "Fizz",10 ;5
-nnnnn	buzz	 db "Buzz",10 ;5
-	fizzBuzz db "FizzBuzz",10 ;11
+	buzz	 db "Buzz",10 ;5
+	fizzBuzz db "FizzBuzz",10 ;9
+
 	counter  db  0
-	divider  db 0
-	size 	 db 100
-	temp1 	 db 0
-	temp2 	 db 0
-	divisor  db 10
+	divider  db  0
+	size 	 db  100
+	divisor  db  10
+
 section .text
 	global _start
 
@@ -63,7 +51,7 @@ _check5neg:
 	div byte [divider]
 	cmp ah,0
 	je _printBuzz		;if( x % 5 == 0)
-	jmp _printCurrentNumber		;else
+	jmp endCheck		;else
 
 _printFizz:
 	mov rax,1
@@ -85,21 +73,8 @@ _printFizzBuzz:
 	mov rax, 1
 	mov rdi, 1
 	mov rsi, fizzBuzz
-	mov rdx, 11
+	mov rdx, 9
 	syscall
 
 	jmp endCheck
 
-_printCurrentNumber:
-	
-	mov ax, 0
-	mov al, byte [counter]
-	div byte [divisor]
-	mov [temp1], ah
-	mov ah,0
-	div byte [divisor]
-	mov [temp2], ah
-	printINT temp2
-	printINT temp1
-
-	jmp endCheck
